@@ -68,8 +68,49 @@ The second issue I ran into was that my serial port could not be found despite m
 The third issue, which was not really an issue, more so an oversight, was that I believed the upload was not successful because I could not see the text displayed, but this was due to the backlight contrast. This was easily remedied by turning the potentiometer on the LCD shield to increase the contrast.
 
 ### Output
+Below is where I set the cusor at the starting point in the LCD to write the text "Hello, World!".
+
+```C
+/* Set the starting cursor position */
+  lcd.setCursor(0,0);
+  lcd.print("Hello, World!");
+  delay(1000);
+  lcd.clear();
+```
+To get the same message to display at the 2nd row after the first, I wrote the same code and changed the cursor position.
+```C
+/* Set the starting cursor position */
+  lcd.setCursor(0,1);
+```
 
 **insert images**
 
 ## Displaying Scrolling Text
 This section is where I display scrolling text on my LCD and my process of doing so.
+
+### Process
+To begin showing a scrolling string on my LCD I initialize two strings that will represent my static message and my scrolling message
+```C
+/* Message strings */
+String staticMessage = "String";
+String scrollingMessage = "This is the scrolling message that is more than 16 characters";
+```
+Next, I declare a function to process a scrolling message. This function will take in the arguments: row, scolling message, delay time, and column. The row is for where I want the scrolling message to be, the scrolling message itself, how long the text will move from initial to the next position, and the number of columns by LCD has.
+```C
+void scrollText(int row, String message, int delayTime, int col){
+  for (int i = 0; i < col; i++){
+    message += " ";
+  }
+  message += " ";
+
+  for (int pos = 0; pos < message.length(); pos++){
+    lcd.setCursor(0,row);
+    lcd.print(message.substring(pos, pos + col));
+    delay(delayTime);
+  }
+}
+```
+In my main function, I call the lcd.print() function for my static message and my scrollText() function to display my scrolling message.
+
+### Output
+**insert gif**
