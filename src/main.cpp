@@ -37,12 +37,28 @@ void scrollText(int row, String message, int delayTime, int col){
   }
 }
 
+/**
+ * Custom character generator
+ */
+byte customChar[] = {
+  0x04,
+  0x0E,
+  0x04,
+  0x04,
+  0x0E,
+  0x15,
+  0x0A,
+  0x11
+};
+
 void setup()
 {
   /* Initialize LCD */
   lcd.init();
   /* Turn on backlight */
   lcd.backlight();
+  /* LCD create char */
+  lcd.createChar(7, customChar);
 }
 
 void loop()
@@ -51,6 +67,10 @@ void loop()
   lcd.setCursor(0,0);
   /* Print text */
   lcd.print(staticMessage);
+  /* Print character */
+  lcd.setCursor(8,0);
+  lcd.write(0);
   /* Print scrolling text */
   scrollText(1, scrollingMessage, 250, col);
+
 }

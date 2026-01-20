@@ -114,3 +114,9 @@ In my main function, I call the lcd.print() function for my static message and m
 ### Output
 ![20260117_191127(1)](https://github.com/user-attachments/assets/35398f58-871d-4087-ac1d-2a639af4932e)
 
+## Custom Characters
+
+In this section, I use a bitmap generator for a 5x8 pixel to customize my own character on one block out of the 32 blocks of pixels available on the display.
+
+### Output
+**insert image**
