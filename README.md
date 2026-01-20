@@ -82,8 +82,7 @@ To get the same message to display at the 2nd row after the first, I wrote the s
 /* Set the starting cursor position */
   lcd.setCursor(0,1);
 ```
-
-**insert images**
+<img src="https://github.com/user-attachments/assets/e58f6e5f-64bd-4af7-bf4e-77c27bdd9267" width="49%" /> <img src="https://github.com/user-attachments/assets/a67c8d19-09a4-4735-a729-b92784b7d499" width="49%" />
 
 ## Displaying Scrolling Text
 This section is where I display scrolling text on my LCD and my process of doing so.
@@ -113,4 +112,5 @@ void scrollText(int row, String message, int delayTime, int col){
 In my main function, I call the lcd.print() function for my static message and my scrollText() function to display my scrolling message.
 
 ### Output
-**insert gif**
+![20260117_191127(1)](https://github.com/user-attachments/assets/35398f58-871d-4087-ac1d-2a639af4932e)
+
