@@ -1,4 +1,5 @@
 # Liquid Crystal Display 16x2
+This is my project to showcase the different ways to use a 16x2 Liquid Crystal Display with my ESP32-S3 with PlatformIO. Below is where I show how to get the address, using that address to find the device and configure it, display text on both rows, display rolling charcters, and lastly, to display custom characters using a bitmap.
 
 ## Finding the Address
 Scanned the address for the LCD and received 0x27 (default address)
